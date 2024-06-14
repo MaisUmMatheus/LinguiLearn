@@ -12,27 +12,28 @@ class _EspanholPageState extends State<EspanholPage> {
 
   final List<Map<String, dynamic>> _questions = [
     {
-      'question': 'Traduza esta palavra',
-      'subQuestion': 'Sorvete',
-      'options': ['Helado', 'Gelato', 'Bonjour', 'Soleado'],
-      'correctAnswer': 'Helado'
+      'question': 'Traduza esta palavra para o Espanhol',
+      'subQuestion': 'Brinquedo',
+      'options': ['Listo', 'Cerca', 'Temprano', 'Juguete'],
+      'correctAnswer': 'Juguete'
     },
     {
-      'question': 'Traduza esta palavra',
-      'subQuestion': 'Sol',
-      'options': ['Luna', 'Sol', 'Hola', 'Helado'],
-      'correctAnswer': 'Sol'
+      'question': 'Traduza esta palavra para o Espanhol',
+      'subQuestion': 'Cedo',
+      'options': ['Listo', 'Cerca', 'Temprano', 'Juguete'],
+      'correctAnswer': 'Temprano'
     },
     {
-      'question': 'Como se diz "Olá" em espanhol?',
-      'options': ['Bonjour', 'Hello', 'Hola', 'Ciao'],
-      'correctAnswer': 'Hola'
+      'question': 'Traduza esta palavra para o Espanhol',
+      'subQuestion': 'Pronto',
+      'options': ['Listo', 'Cerca', 'Temprano', 'Juguete'],
+      'correctAnswer': 'Listo'
     },
     {
-      'question': 'Traduza esta palavra',
-      'subQuestion': 'Coração',
-      'options': ['Corazón', 'Dossier', 'Pluie', 'Cuore'],
-      'correctAnswer': 'Corazón'
+      'question': 'Traduza esta palavra para o Espanhol',
+      'subQuestion': 'Perto',
+      'options': ['Listo', 'Cerca', 'Temprano', 'Juguete'],
+      'correctAnswer': 'Cerca'
     },
   ];
 

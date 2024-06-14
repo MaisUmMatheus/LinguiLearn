@@ -24,9 +24,10 @@ class _ItalianoPageState extends State<ItalianoPage> {
       'correctAnswer': 'Sole'
     },
     {
-      'question': 'Como se diz "Olá" em italiano?',
-      'options': ['Bonjour', 'Hello', 'Hola', 'Ciao'],
-      'correctAnswer': 'Ciao'
+      'question': 'Traduza esta palavra',
+      'subQuestion': 'Coruja',
+      'options': ['Gufo', 'Gelato', 'Ciao', 'Sole'],
+      'correctAnswer': 'Gufo'
     },
     {
       'question': 'Traduza esta palavra?',

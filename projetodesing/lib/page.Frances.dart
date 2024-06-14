@@ -12,27 +12,28 @@ class _FrancesPageState extends State<FrancesPage> {
 
   final List<Map<String, dynamic>> _questions = [
     {
-      'question': 'Traduza esta palavra',
-      'subQuestion': 'Sorvete',
-      'options': ['Gufo', 'Gelato', 'Ciao', 'Sole'],
-      'correctAnswer': 'Gelato'
+      'question': 'Traduza esta palavra para o Francês',
+      'subQuestion': 'Pescoço',
+      'options': ['Dossier', 'Plue', 'Cou', 'Coeur'],
+      'correctAnswer': 'Cou'
     },
     {
-      'question': 'Traduza esta palavra',
-      'subQuestion': 'Sol',
-      'options': ['Gufo', 'Sole', 'Cião', 'Gelato'],
-      'correctAnswer': 'Sole'
+      'question': 'Traduza esta palavra para o Francês',
+      'subQuestion': 'Chuva',
+      'options': ['Dossier', 'Plue', 'Cou', 'Coeur'],
+      'correctAnswer': 'Plue'
     },
     {
-      'question': 'Como se diz "Olá" em italiano?',
-      'options': ['Bonjour', 'Hello', 'Hola', 'Ciao'],
-      'correctAnswer': 'Ciao'
+      'question': 'Traduza esta palavra para o Francês',
+      'subQuestion': 'Pasta',
+      'options': ['Dossier', 'Plue', 'Cou', 'Coeur'],
+      'correctAnswer': 'Dossier'
     },
     {
-      'question': 'Traduza esta palavra?',
+      'question': 'Traduza esta palavra para o Francês',
       'subQuestion': 'Coração',
-      'options': ['Dossier', 'Plue', 'Cuore', 'Coer'],
-      'correctAnswer': 'Cuore'
+      'options': ['Dossier', 'Plue', 'Cou', 'Coeur'],
+      'correctAnswer': 'Coeur'
     },
   ];
 

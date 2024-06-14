@@ -12,27 +12,28 @@ class _InglesPageState extends State<InglesPage> {
 
   final List<Map<String, dynamic>> _questions = [
     {
-      'question': 'Translate this word',
-      'subQuestion': 'Ice cream',
-      'options': ['Ice', 'Cream', 'Milk', 'Ice cream'],
-      'correctAnswer': 'Ice cream'
+      'question': 'Traduza essa paralavra para o Inglês',
+      'subQuestion': 'Boneca',
+      'options': ['Cat', 'House', 'Car', 'Doll'],
+      'correctAnswer': 'Doll'
     },
     {
-      'question': 'Translate this word',
-      'subQuestion': 'Sun',
-      'options': ['Moon', 'Sun', 'Star', 'Sky'],
-      'correctAnswer': 'Sun'
+      'question': 'Traduza essa paralavra para o Inglês',
+      'subQuestion': 'Casa',
+      'options': ['Cat', 'Car', 'Doll', 'House'],
+      'correctAnswer': 'House'
     },
     {
-      'question': 'How do you say "Hello" in English?',
-      'options': ['Hola', 'Bonjour', 'Hello', 'Ciao'],
-      'correctAnswer': 'Hello'
+      'question': 'Traduza essa paralavra para o Inglês',
+      'subQuestion': 'Gato',
+      'options': ['Cat', 'Car', 'Doll', 'House'],
+      'correctAnswer': 'Cat'
     },
     {
-      'question': 'Translate this word',
-      'subQuestion': 'Heart',
-      'options': ['Head', 'Heart', 'Hand', 'Foot'],
-      'correctAnswer': 'Heart'
+      'question': 'Traduza essa paralavra para o Inglês',
+      'subQuestion': 'Carro',
+      'options': ['Cat', 'Car', 'Doll', 'House'],
+      'correctAnswer': 'Car'
     },
   ];
 
