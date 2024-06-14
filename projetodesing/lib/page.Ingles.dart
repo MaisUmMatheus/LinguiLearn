@@ -51,6 +51,9 @@ class _InglesPageState extends State<InglesPage> {
   }
 
   Future<void> _showCompletionDialog() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('ingles_concluido', true);
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -58,45 +61,12 @@ class _InglesPageState extends State<InglesPage> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.emoji_events, color: Colors.green, size: 50),
+            Image.asset(
+                'Certificado.png'), // Certifique-se de adicionar a imagem do certificado no diretório assets
             SizedBox(height: 20),
             Text('You have completed the level test.'),
-            SizedBox(height: 20),
-            Text('Would you like to send the certificate by email?'),
           ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-              _showEmailConfirmationDialog(false);
-            },
-            child: Text('No'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-              _showEmailConfirmationDialog(true);
-            },
-            child: Text('Yes'),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Future<void> _showEmailConfirmationDialog(bool emailSent) async {
-    // Marcar o curso como concluído
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('ingles_concluido', true);
-
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(emailSent ? 'Action Confirmed' : 'Action Canceled'),
-        content: Text(emailSent
-            ? 'You have chosen to send the certificate by email.'
-            : 'You have chosen not to send the certificate by email.'),
         actions: [
           TextButton(
             onPressed: () {
@@ -142,7 +112,7 @@ class _InglesPageState extends State<InglesPage> {
             top: 16,
             left: 16,
             child: Text(
-              'New Language',
+              'New LinguiLearn',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
@@ -151,6 +121,13 @@ class _InglesPageState extends State<InglesPage> {
               textAlign: TextAlign.left,
             ),
           ),
+          Positioned(
+            top: 50, // Ajuste a posição vertical conforme necessário
+            left: 16,
+            right: 16,
+            child: Image.asset(
+                'USA.png'), // Certifique-se de adicionar a imagem no diretório assets
+          ),
           Center(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -158,6 +135,8 @@ class _InglesPageState extends State<InglesPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                      height: 100), // Ajuste o espaçamento conforme necessário
                   Text(
                     'ENGLISH',
                     style: TextStyle(

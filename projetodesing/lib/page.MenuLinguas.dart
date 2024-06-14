@@ -83,18 +83,24 @@ class _MenuLinguasState extends State<MenuLinguas>
                 },
               ),
             if (allCoursesCompleted) SizedBox(height: 20),
-            Text(
-              'LinguiLearn',
-              textAlign: TextAlign.left,
-              style: TextStyle(
-                fontSize: 28,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+            if (!allCoursesCompleted)
+              Column(
+                children: [
+                  Text(
+                    'LinguiLearn',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 40,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Image.asset(
+                      'Bandeiras.png'), // Certifique-se de adicionar a imagem no diretório assets
+                ],
               ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
+            SizedBox(height: 50),
             Text(
               'Escolha qual língua você gostaria de testar o seu nível',
               textAlign: TextAlign.center,

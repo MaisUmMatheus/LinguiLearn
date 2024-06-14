@@ -14,25 +14,25 @@ class _FrancesPageState extends State<FrancesPage> {
     {
       'question': 'Traduza esta palavra',
       'subQuestion': 'Sorvete',
-      'options': ['Glace', 'Gelato', 'Bonjour', 'Soleil'],
-      'correctAnswer': 'Glace'
+      'options': ['Gufo', 'Gelato', 'Ciao', 'Sole'],
+      'correctAnswer': 'Gelato'
     },
     {
       'question': 'Traduza esta palavra',
       'subQuestion': 'Sol',
-      'options': ['Lune', 'Soleil', 'Bonjour', 'Glace'],
-      'correctAnswer': 'Soleil'
+      'options': ['Gufo', 'Sole', 'Cião', 'Gelato'],
+      'correctAnswer': 'Sole'
     },
     {
-      'question': 'Como se diz "Olá" em francês?',
-      'options': ['Hola', 'Hello', 'Bonjour', 'Ciao'],
-      'correctAnswer': 'Bonjour'
+      'question': 'Como se diz "Olá" em italiano?',
+      'options': ['Bonjour', 'Hello', 'Hola', 'Ciao'],
+      'correctAnswer': 'Ciao'
     },
     {
-      'question': 'Traduza esta palavra',
+      'question': 'Traduza esta palavra?',
       'subQuestion': 'Coração',
-      'options': ['Coure', 'Dossier', 'Pluie', 'Ciuli'],
-      'correctAnswer': 'Coure'
+      'options': ['Dossier', 'Plue', 'Cuore', 'Coer'],
+      'correctAnswer': 'Cuore'
     },
   ];
 
@@ -51,6 +51,9 @@ class _FrancesPageState extends State<FrancesPage> {
   }
 
   Future<void> _showCompletionDialog() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('frances_concluido', true);
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -58,46 +61,12 @@ class _FrancesPageState extends State<FrancesPage> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.emoji_events, color: Colors.green, size: 50),
+            Image.asset(
+                'Certificado.png'), // Certifique-se de adicionar a imagem do certificado no diretório assets
             SizedBox(height: 20),
             Text('Você completou o teste de nível.'),
-            SizedBox(height: 20),
-            Text('Gostaria de mandar o certificado por e-mail?'),
           ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-              _showEmailConfirmationDialog(false);
-            },
-            child: Text('Não'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-              _showEmailConfirmationDialog(true);
-            },
-            child: Text('Sim'),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Future<void> _showEmailConfirmationDialog(bool emailSent) async {
-    // Marcar o curso como concluído
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('frances_concluido', true);
-
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title:
-            Text(emailSent ? 'Certificado enviado' : 'Certificado não enviado'),
-        content: Text(emailSent
-            ? 'O certificado foi enviado para o seu e-mail.'
-            : 'Você escolheu não enviar o certificado por e-mail.'),
         actions: [
           TextButton(
             onPressed: () {
@@ -143,7 +112,7 @@ class _FrancesPageState extends State<FrancesPage> {
             top: 16,
             left: 16,
             child: Text(
-              'New Language',
+              'New LinguiLearn',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
@@ -152,6 +121,13 @@ class _FrancesPageState extends State<FrancesPage> {
               textAlign: TextAlign.left,
             ),
           ),
+          Positioned(
+            top: 50, // Ajuste a posição vertical conforme necessário
+            left: 16,
+            right: 16,
+            child: Image.asset(
+                'Frances.png'), // Certifique-se de adicionar a imagem no diretório assets
+          ),
           Center(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -159,6 +135,8 @@ class _FrancesPageState extends State<FrancesPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                      height: 100), // Ajuste o espaçamento conforme necessário
                   Text(
                     'FRANCÊS',
                     style: TextStyle(

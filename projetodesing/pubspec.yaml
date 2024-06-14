@@ -73,6 +73,11 @@ flutter:
     - assets/Loquinhos.png
     - assets/Livros.png
     - assets/Certificado.png
+    - assets/USA.png
+    - assets/Espanhol.png
+    - assets/Italiano.png
+    - assets/Frances.png
+    - assets/Bandeiras.png
     
   # To add assets to your application, add an assets section, like this:
   # assets:

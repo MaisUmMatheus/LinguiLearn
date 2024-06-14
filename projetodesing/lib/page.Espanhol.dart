@@ -51,6 +51,9 @@ class _EspanholPageState extends State<EspanholPage> {
   }
 
   Future<void> _showCompletionDialog() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('espanhol_concluido', true);
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -58,46 +61,12 @@ class _EspanholPageState extends State<EspanholPage> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.emoji_events, color: Colors.green, size: 50),
+            Image.asset(
+                'assets/Certificado.png'), // Certifique-se de adicionar a imagem do certificado no diretório assets
             SizedBox(height: 20),
             Text('Você completou o teste de nível.'),
-            SizedBox(height: 20),
-            Text('Gostaria de mandar o certificado por e-mail?'),
           ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-              _showEmailConfirmationDialog(false);
-            },
-            child: Text('Não'),
-          ),
-          TextButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-              _showEmailConfirmationDialog(true);
-            },
-            child: Text('Sim'),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Future<void> _showEmailConfirmationDialog(bool emailSent) async {
-    // Marcar o curso como concluído
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('espanhol_concluido', true);
-
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title:
-            Text(emailSent ? 'Certificado enviado' : 'Certificado não enviado'),
-        content: Text(emailSent
-            ? 'O certificado foi enviado para o seu e-mail.'
-            : 'Você escolheu não enviar o certificado por e-mail.'),
         actions: [
           TextButton(
             onPressed: () {
@@ -152,6 +121,13 @@ class _EspanholPageState extends State<EspanholPage> {
               textAlign: TextAlign.left,
             ),
           ),
+          Positioned(
+            top: 50, // Ajuste a posição vertical conforme necessário
+            left: 16,
+            right: 16,
+            child: Image.asset(
+                'Espanhol.png'), // Certifique-se de adicionar a imagem no diretório assets
+          ),
           Center(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -159,6 +135,8 @@ class _EspanholPageState extends State<EspanholPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  SizedBox(
+                      height: 100), // Ajuste o espaçamento conforme necessário
                   Text(
                     'ESPANHOL',
                     style: TextStyle(

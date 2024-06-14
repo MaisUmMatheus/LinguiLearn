@@ -22,9 +22,9 @@ class _LoginOficialPageState extends State<LoginOficialPage> {
     final username = _usernameController.text;
     final password = _passwordController.text;
 
-    // As credenciais corretas podem ser armazenadas em um banco de dados ou em variáveis
-    const correctUsername = 'admin';
-    const correctPassword = 'admin';
+    
+    const correctUsername = 'root';
+    const correctPassword = 'root';
 
     if (username == correctUsername && password == correctPassword) {
       SharedPreferences prefs = await SharedPreferences.getInstance();

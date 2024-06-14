@@ -1,6 +1,37 @@
 import 'package:flutter/material.dart';
 
-class CadastroPage extends StatelessWidget {
+class CadastroPage extends StatefulWidget {
+  @override
+  _CadastroPageState createState() => _CadastroPageState();
+}
+
+class _CadastroPageState extends State<CadastroPage> {
+  final _nomeController = TextEditingController();
+  final _senhaController = TextEditingController();
+  final _confirmarSenhaController = TextEditingController();
+  final _emailController = TextEditingController();
+
+  void _salvarCadastro() {
+    if (_nomeController.text.isNotEmpty &&
+        _senhaController.text.isNotEmpty &&
+        _confirmarSenhaController.text.isNotEmpty &&
+        _emailController.text.isNotEmpty) {
+      // Mostrar mensagem de "Cadastro salvo"
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Cadastro salvo!'),
+        ),
+      );
+    } else {
+      // Mostrar mensagem de erro
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Por favor, preencha todos os campos.'),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +99,7 @@ class CadastroPage extends StatelessWidget {
                   child: Column(
                     children: [
                       TextField(
+                        controller: _nomeController,
                         decoration: InputDecoration(
                           labelText: 'Nome do Usuário',
                           fillColor: Colors.white,
@@ -76,6 +108,7 @@ class CadastroPage extends StatelessWidget {
                       ),
                       SizedBox(height: 20),
                       TextField(
+                        controller: _senhaController,
                         decoration: InputDecoration(
                           labelText: 'Senha',
                           border: OutlineInputBorder(),
@@ -84,16 +117,41 @@ class CadastroPage extends StatelessWidget {
                       ),
                       SizedBox(height: 20),
                       TextField(
+                        controller: _confirmarSenhaController,
                         decoration: InputDecoration(
                           labelText: 'Confirmar senha',
                           border: OutlineInputBorder(),
                         ),
+                        obscureText: true,
                       ),
                       SizedBox(height: 20),
                       TextField(
+                        controller: _emailController,
                         decoration: InputDecoration(
                           labelText: 'Email',
                           border: OutlineInputBorder(),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: _salvarCadastro,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromARGB(255, 94, 8, 233),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                              vertical: 15, horizontal: 30),
+                          child: Text(
+                            'Salvar',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
                     ],
